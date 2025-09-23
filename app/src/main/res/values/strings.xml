@@ -1,0 +1,17 @@
+
+
+        <resources>
+            <string name="app_name">MiAplicacion</string>
+            <string name="bienvenido">Bienvenido</string>
+            <string name="inicia_sesion">Por favor, inicia sesión</string>
+            <string name="email">Correo electrónico</string>
+            <string name="password">Contraseña</string>
+            <string name="hint_email">Ingresa tu correo</string>
+            <string name="hint_password">Ingresa tu contraseña</string>
+            <string name="recordar">Recordar contraseña</string>
+            <string name="olvido">Olvidé mi contraseña</string>
+            <string name="login2">Iniciar Sesion</string>
+            <string name="registro">Registrarse</string>
+            <string name="titulo">Asistente académico</string>
+        </resources>
+
