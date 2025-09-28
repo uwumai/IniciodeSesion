@@ -1,17 +1,20 @@
-
-
-        <resources>
-            <string name="app_name">MiAplicacion</string>
-            <string name="bienvenido">Bienvenido</string>
-            <string name="inicia_sesion">Por favor, inicia sesión</string>
-            <string name="email">Correo electrónico</string>
-            <string name="password">Contraseña</string>
-            <string name="hint_email">Ingresa tu correo</string>
-            <string name="hint_password">Ingresa tu contraseña</string>
-            <string name="recordar">Recordar contraseña</string>
-            <string name="olvido">Olvidé mi contraseña</string>
-            <string name="login2">Iniciar Sesion</string>
-            <string name="registro">Registrarse</string>
-            <string name="titulo">Asistente académico</string>
-        </resources>
+<resources>
+    <string name="app_name">MiAplicacion</string>
+    <string name="bienvenido">Bienvenido</string>
+    <string name="inicia_sesion">Por favor, inicia sesión</string>
+    <string name="email">Correo electrónico</string>
+    <string name="password">Contraseña</string>
+    <string name="hint_email">Ingresa tu correo</string>
+    <string name="hint_password">Ingresa tu contraseña</string>
+    <string name="recordar">Recordar contraseña</string>
+    <string name="olvido">Olvidé mi contraseña</string>
+    <string name="login2">Iniciar Sesion</string>
+    <string name="registro">Registrarse</string>
+    <string name="titulo">Asistente académico</string>
+    <string name="logo">logo</string>
+    <string name="continuarcon">iniciar sesión con</string>
+    <string name="facebook">facebook</string>
+    <string name="google">google</string>
+    <string name="default_web_client_id">229068822380-8sp3bp6rjnf62vat9ohbklegkbi3mj6t.apps.googleusercontent.com</string>
+</resources>
 

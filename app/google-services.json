@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "229068822380",
+    "project_id": "iniciodesesion-f3053",
+    "storage_bucket": "iniciodesesion-f3053.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:229068822380:android:6b48388f4c1a8f76c18549",
+        "android_client_info": {
+          "package_name": "com.example.iniciodesesion"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "229068822380-8sp3bp6rjnf62vat9ohbklegkbi3mj6t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.iniciodesesion",
+            "certificate_hash": "f6d6fd903dcccb19100dd4e23f36669288a932b9"
+          }
+        },
+        {
+          "client_id": "229068822380-cs0f54guttm9kilsjohla6gonukk8v72.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZsX3gOGdW4sQAco2omYdo1_RpuZUwPAg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "229068822380-cs0f54guttm9kilsjohla6gonukk8v72.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

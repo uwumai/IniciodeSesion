@@ -4,7 +4,7 @@
         <item name="colorPrimary">@color/naranja2</item>
         <!-- Aquí puedes ajustar otros colores para night mode -->
         <item name="colorOnPrimary">@color/white</item>
-        <item name="android:statusBarColor">@color/verdesillo</item>
+        <item name="android:statusBarColor">@color/naranja2</item>
     </style>
 
 </resources>

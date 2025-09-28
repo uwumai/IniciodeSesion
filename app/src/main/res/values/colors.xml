@@ -2,12 +2,10 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="verdesillo">#C6FD8B</color>
-    <color name="verdesillo2">#51EF58</color>
     <color name="naranja">#EDDF88</color>
     <color name="naranja2">#FF9A0E</color>
     <color name="naranja3">#FBC163</color>
     <color name="darkgray">#444444</color>
-
+    <color name="grisclaro">#F4F4F4</color>
 
 </resources>
