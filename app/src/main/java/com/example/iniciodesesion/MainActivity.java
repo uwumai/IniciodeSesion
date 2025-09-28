@@ -89,6 +89,17 @@ public class MainActivity extends AppCompatActivity {
         btnGoogle.setOnClickListener(v -> signInWithGoogle());
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        // Check if user is already signed in
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser != null) {
+            // User is already logged in, go to menu
+            navigateToMenu();
+        }
+    }
+
     // ================= EMAIL/PASSWORD =======================
     private void registerUser() {
         String email = emailField.getText().toString().trim();
@@ -105,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
                         FirebaseUser user = mAuth.getCurrentUser();
                         if (user != null) {
                             Toast.makeText(this, "Registro exitoso: " + user.getEmail(), Toast.LENGTH_SHORT).show();
+                            navigateToMenu();
                         }
                     } else {
                         if (task.getException() != null) {
@@ -129,6 +141,7 @@ public class MainActivity extends AppCompatActivity {
                         FirebaseUser user = mAuth.getCurrentUser();
                         if (user != null) {
                             Toast.makeText(this, "Bienvenido: " + user.getEmail(), Toast.LENGTH_SHORT).show();
+                            navigateToMenu();
                         }
                     } else {
                         if (task.getException() != null) {
@@ -137,7 +150,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
     }
-
 
     private void signInWithGoogle() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
@@ -152,6 +164,7 @@ public class MainActivity extends AppCompatActivity {
                         FirebaseUser user = mAuth.getCurrentUser();
                         if (user != null) {
                             Toast.makeText(this, "Bienvenido con Google: " + user.getEmail(), Toast.LENGTH_SHORT).show();
+                            navigateToMenu();
                         }
                     } else {
                         if (task.getException() != null) {
@@ -159,5 +172,11 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    private void navigateToMenu() {
+        Intent intent = new Intent(MainActivity.this, menu.class);
+        startActivity(intent);
+        finish(); // Close login activity so user can't go back with back button
     }
 }
