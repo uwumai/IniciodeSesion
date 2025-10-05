@@ -2,15 +2,16 @@ package com.example.iniciodesesion;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -27,7 +28,6 @@ public class menu extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
 
         mAuth = FirebaseAuth.getInstance();
-
         checkUserAuthentication();
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -38,12 +38,16 @@ public class menu extends AppCompatActivity {
 
         initViews();
         setupClickListeners();
+
+        // Mostrar GeneralFragment por defecto
+        if (savedInstanceState == null) {
+            loadFragment(new GeneralFragment());
+        }
     }
 
     private void checkUserAuthentication() {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser == null) {
-            // Si no hay usuario logueado, regresar al login
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
             finish();
@@ -57,28 +61,15 @@ public class menu extends AppCompatActivity {
     }
 
     private void setupClickListeners() {
-        btnNotes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(menu.this, NotesActivity.class);
-                startActivity(intent);
-            }
-        });
+        btnNotes.setOnClickListener(v -> loadFragment(new ApuntesFragment()));
+        btnSchedule.setOnClickListener(v -> loadFragment(new HorarioFragment()));
+        btnTasks.setOnClickListener(v -> loadFragment(new TareasFragment()));
+    }
 
-        btnSchedule.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(menu.this, ScheduleActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        btnTasks.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(menu.this, TasksActivity.class);
-                startActivity(intent);
-            }
-        });
+    private void loadFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container, fragment);
+        fragmentTransaction.commit();
     }
 }

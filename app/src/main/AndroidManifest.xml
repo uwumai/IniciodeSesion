@@ -14,33 +14,21 @@
         tools:targetApi="31">
 
         <activity
+            android:name="com.example.iniciodesesion.Notas"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".menu"
             android:exported="false" />
 
-        <activity
-            android:name=".NotesActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".ScheduleActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".SubjectsActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".TasksActivity"
-            android:exported="false" />
     </application>
 
 </manifest>

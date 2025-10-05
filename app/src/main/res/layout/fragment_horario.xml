@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#FAFAFA"
+    tools:context=".HorarioFragment">
+
+    <!-- 🔹 Menú desplegable moderno estilo Material3 -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/menuHorariosLayout"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/seleccionar_horario"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusTopStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:boxStrokeColor="#FF9800"
+        app:endIconDrawable="@drawable/arrowdrop"
+        app:endIconTint="#FF9800">
+
+        <AutoCompleteTextView
+            android:id="@+id/menuHorarios"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@android:color/transparent"
+            android:inputType="none"
+            android:minHeight="48dp"
+            android:padding="8dp"
+            android:textColor="#212121"
+            android:textSize="16sp"
+            android:entries="@array/horarios_array"
+            tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- 🔹 Contenedor del horario -->
+    <FrameLayout
+        android:id="@+id/contenedorHorario"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="12dp"
+        android:background="#FFFFFF"
+        android:elevation="2dp"
+        android:padding="12dp" />
+
+</LinearLayout>

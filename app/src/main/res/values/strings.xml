@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">MiAplicacion</string>
     <string name="bienvenido">Bienvenido</string>
@@ -15,6 +16,44 @@
     <string name="continuarcon">iniciar sesión con</string>
     <string name="facebook">facebook</string>
     <string name="google">google</string>
+    <string name="agenda">  Mi agenda</string>
+    <string name="imagen">una imagen></string>
     <string name="default_web_client_id">229068822380-8sp3bp6rjnf62vat9ohbklegkbi3mj6t.apps.googleusercontent.com</string>
+    <string name="apuntes">Apuntes</string>
+    <string name="horarios">Horario</string>
+    <string name="tareas">Tareas</string>
+    <string name="apuntes_recientes">Apuntes Recientes</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="vista_general">Vista General</string>
+    <string name="proximaclase">📌 Próxima clase: Matemáticas – 8:00 am</string>
+    <string name="tareaspendientes">📝 Tareas pendientes: 2</string>
+    <string name="apuntesguardados">📚 Apuntes guardados: 5</string>
+    <string name="añadirasignatura">➕ Añadir asignatura</string>
+    <string name="nueva_asignatura">Nueva asignatura</string>
+    <string name="resumen_general">📝 Tareas pendientes: %1$d\n📚 Apuntes guardados: %2$d</string>
+    <string name="toast_bienvenida">Bienvenido a tus apuntes</string>
+    <string name="asignaturas">Asignaturas</string>
+    <string name="matem_ticas">Matemáticas</string>
+    <string name="Nombreasignatura">Nombre de la asignatura</string>
+    <string name="add_subject">Añadir asignatura</string>
+    <string name="new_subject">Nueva asignatura</string>
+    <string name="subject_subtitle">Asignatura añadida</string>
+    <string name="ejemplos">Apuntes, tareas, etc.</string>
+    <string name="nombre_de_la_materia">Nombre de la Materia</string>
+    <string name="agregar">Agregar</string>
+    <string name="escribe_una_tarea">Escribe una tarea...</string>
+    <string name="nueva_tarea">Nueva tarea...</string>
+    <string name="tareasuwu">Tareas:</string>
+    <string name="escribe_tus_apuntes">Escribe tus apuntes...</string>
+    <string name="materia">Materia</string>
+    <string name="unnamed_subject">Sin nombre</string>
+    <string name="task_item">- %1$s</string>
+    <string name="seleccionar_horario">Seleccionar horario</string>
+    <string-array name="horarios_array">
+        <item>Mañana</item>
+        <item>Tarde</item>
+        <item>Noche</item>
+    </string-array>
 </resources>
 

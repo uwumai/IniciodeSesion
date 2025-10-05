@@ -1,228 +1,222 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F8F9FA">
+    android:background="@color/white">
 
-    <LinearLayout
-        android:id="@+id/main"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:layout_height="wrap_content">
 
-        <!-- Header -->
         <LinearLayout
+            android:id="@+id/main"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginBottom="24dp">
+            android:orientation="vertical"
+            android:padding="16dp">
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_menu"
-                android:layout_marginEnd="16dp" />
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/titulo"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/naranja2" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="📍 Mi Universidad"
-                    android:textSize="14sp"
-                    android:textColor="#7F8C8D" />
-
-            </LinearLayout>
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/profile_placeholder"
-                app:civ_border_width="2dp"
-                app:civ_border_color="#E8F4FD" />
-
-        </LinearLayout>
-
-        <!-- Search Bar -->
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginBottom="24dp"
-            app:cardCornerRadius="25dp"
-            app:cardElevation="2dp">
-
+            <!-- Header -->
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
-                android:padding="16dp">
+                android:layout_marginBottom="16dp">
 
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/ic_search"
-                    android:layout_marginEnd="12dp" />
+                    android:id="@+id/imageView"
+                    android:layout_width="36dp"
+                    android:layout_height="68dp"
+                    android:contentDescription="@string/logo"
+                    android:src="@drawable/logo" />
 
-                <EditText
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:hint="Buscar apuntes, horarios..."
-                    android:background="@null"
-                    android:textSize="14sp" />
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/titulo"
+                        android:textColor="#FF5722"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/agenda"
+                        android:textColor="#546E7A"
+                        android:textSize="14sp" />
+                </LinearLayout>
             </LinearLayout>
 
-        </androidx.cardview.widget.CardView>
-
-        <!--Category Icons
-        Removed Materias section and updated layout weights for 3 buttons
-         -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="24dp">
-
+            <!-- Saludo al usuario -->
             <LinearLayout
-                android:id="@+id/btn_notes"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:orientation="vertical"
-                android:gravity="center"
-                android:padding="16dp"
-                android:background="?attr/selectableItemBackground"
-                android:clickable="true">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    app:cardCornerRadius="15dp"
-                    app:cardElevation="3dp"
-                    android:layout_marginBottom="8dp"
-                    app:cardBackgroundColor="#4A90A4">
-
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_gravity="center"
-                        android:src="@drawable/ic_notes"
-                        android:tint="@android:color/white" />
-
-                </androidx.cardview.widget.CardView>
+                android:layout_marginBottom="24dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp">
 
                 <TextView
+                    android:id="@+id/tvSaludoUsuario"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Apuntes"
-                    android:textSize="12sp"
-                    android:textColor="#2C3E50" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/btn_schedule"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:padding="16dp"
-                android:background="?attr/selectableItemBackground"
-                android:clickable="true">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    app:cardCornerRadius="15dp"
-                    app:cardElevation="3dp"
-                    android:layout_marginBottom="8dp"
-                    app:cardBackgroundColor="#E8F4FD">
-
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_gravity="center"
-                        android:src="@drawable/ic_schedule"
-                        android:tint="#4A90A4" />
-
-                </androidx.cardview.widget.CardView>
+                    android:text="¡Hola, Jeisi!"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif-medium"
+                    android:layout_marginBottom="4dp" />
 
                 <TextView
+                    android:id="@+id/tvMensajeDia"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Horarios"
-                    android:textSize="12sp"
-                    android:textColor="#2C3E50" />
-
+                    android:text="¡Que tengas un día productivo!"
+                    android:textSize="14sp"
+                    android:textColor="#555555"
+                    android:fontFamily="sans-serif" />
             </LinearLayout>
 
+            <!-- Botones -->
             <LinearLayout
-                android:id="@+id/btn_tasks"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:padding="16dp"
-                android:background="?attr/selectableItemBackground"
-                android:clickable="true">
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:layout_marginBottom="24dp">
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    app:cardCornerRadius="15dp"
-                    app:cardElevation="3dp"
-                    android:layout_marginBottom="8dp"
-                    app:cardBackgroundColor="#E8F4FD">
-
-                    <ImageView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_gravity="center"
-                        android:src="@drawable/ic_task"
-                        android:tint="#4A90A4" />
-
-                </androidx.cardview.widget.CardView>
-
-                <TextView
-                    android:layout_width="wrap_content"
+                <!-- Apuntes -->
+                <LinearLayout
+                    android:id="@+id/btn_notes"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Tareas"
-                    android:textSize="12sp"
-                    android:textColor="#2C3E50" />
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="16dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true">
 
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        app:cardCornerRadius="15dp"
+                        app:cardElevation="3dp"
+                        android:layout_marginBottom="8dp"
+                        app:cardBackgroundColor="@color/naranja3">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/imagen"
+                            android:src="@drawable/ic_notes"
+                            app:tint="@android:color/white"
+                            tools:ignore="ImageContrastCheck,ImageContrastCheck" />
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/apuntes"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:textColor="#2C3E50" />
+                </LinearLayout>
+
+                <!-- Horario -->
+                <LinearLayout
+                    android:id="@+id/btn_schedule"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="16dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        app:cardCornerRadius="15dp"
+                        app:cardElevation="3dp"
+                        android:layout_marginBottom="8dp"
+                        app:cardBackgroundColor="@color/naranja3">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/imagen"
+                            android:src="@drawable/ic_schedule"
+                            app:tint="@android:color/white"
+                            tools:ignore="ImageContrastCheck" />
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/horarios"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:textColor="#2C3E50" />
+                </LinearLayout>
+
+                <!-- Tareas -->
+                <LinearLayout
+                    android:id="@+id/btn_tasks"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:padding="16dp"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="75dp"
+                        android:layout_height="75dp"
+                        app:cardCornerRadius="15dp"
+                        app:cardElevation="3dp"
+                        android:layout_marginBottom="8dp"
+                        app:cardBackgroundColor="@color/naranja3">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:contentDescription="@string/imagen"
+                            android:src="@drawable/ic_task"
+                            app:tint="@android:color/white"
+                            tools:ignore="ImageContrastCheck,ImageContrastCheck" />
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tareas"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:textColor="#2C3E50" />
+                </LinearLayout>
             </LinearLayout>
-
         </LinearLayout>
-        <!-- Recent Notes Cards -->
+    </ScrollView>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Apuntes Recientes"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="#2C3E50"
-            android:layout_marginBottom="16dp" />
-
-
-    </LinearLayout>
-
-</ScrollView>
+    <!-- Contenedor de fragmentos (parte de abajo fija) -->
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+</LinearLayout>
