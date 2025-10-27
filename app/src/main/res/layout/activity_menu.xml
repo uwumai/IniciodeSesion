@@ -56,34 +56,51 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- Saludo al usuario -->
+            <!-- Saludo al usuario con botón Cerrar sesión al lado -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginBottom="24dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="4dp"
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp">
 
                 <TextView
                     android:id="@+id/tvSaludoUsuario"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="¡Hola, Jeisi!"
+                    android:layout_weight="1"
+                    android:text="¡Hola, usuario!"
                     android:textSize="20sp"
                     android:textColor="@color/black"
                     android:fontFamily="sans-serif-medium"
-                    android:layout_marginBottom="4dp" />
+                    android:layout_marginBottom="4dp"
+                    tools:ignore="HardcodedText" />
 
-                <TextView
-                    android:id="@+id/tvMensajeDia"
+                <Button
+                    android:id="@+id/btnLogout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="¡Que tengas un día productivo!"
+                    android:backgroundTint="#FF5722"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:text="Cerrar sesión"
+                    android:textColor="@color/white"
                     android:textSize="14sp"
-                    android:textColor="#555555"
-                    android:fontFamily="sans-serif" />
+                    tools:ignore="HardcodedText,TextContrastCheck" />
             </LinearLayout>
+
+            <!-- Mensaje del día debajo del saludo -->
+            <TextView
+                android:id="@+id/tvMensajeDia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¡Que tengas un día productivo!"
+                android:textSize="14sp"
+                android:textColor="#555555"
+                android:fontFamily="sans-serif"
+                tools:ignore="HardcodedText" />
 
             <!-- Botones -->
             <LinearLayout
@@ -218,5 +235,6 @@
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:layout_marginTop="-60dp" />
 </LinearLayout>

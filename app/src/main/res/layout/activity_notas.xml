@@ -1,75 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:padding="16dp"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white">
+    tools:context=".menu">
 
-    <!-- Título con el nombre de la materia -->
-    <TextView
-        android:id="@+id/tvSubjectTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/materia"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:paddingBottom="8dp" />
-
-    <!-- Área de apuntes (nota principal) -->
-    <EditText
-        android:id="@+id/etApuntes"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:hint="@string/escribe_tus_apuntes"
-        android:gravity="top|start"
-        android:inputType="textMultiLine"
-        android:background="@android:color/transparent"
-        android:scrollbars="vertical"
-        android:overScrollMode="always"
-        android:textColor="@color/black"
-        android:padding="8dp"
-        android:textSize="16sp" />
-
-    <!-- Scrollable: listado dinámico de tareas -->
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:contentDescription="@string/tareas">
-
-        <LinearLayout
-            android:id="@+id/container_tasks"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </ScrollView>
-
-    <!-- Input inferior para crear nueva tarea + botón -->
+    <!-- CONTENIDO PRINCIPAL -->
     <LinearLayout
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:paddingTop="8dp">
+        android:layout_height="match_parent"
+        android:padding="16dp">
 
+        <!-- Título con el nombre de la materia -->
+        <TextView
+            android:id="@+id/tvSubjectTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/materia"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:paddingBottom="8dp" />
+
+        <!-- Área de apuntes -->
         <EditText
-            android:id="@+id/etNuevaTarea"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="@string/escribe_una_tarea"
-            android:importantForAutofill="no"
-            android:inputType="text"
-            android:minHeight="48dp"
-            android:padding="10dp" />
+            android:id="@+id/etApuntes"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:hint="@string/escribe_tus_apuntes"
+            android:gravity="top|start"
+            android:inputType="textMultiLine"
+            android:background="@android:color/transparent"
+            android:scrollbars="vertical"
+            android:overScrollMode="always"
+            android:textColor="@color/black"
+            android:padding="8dp"
+            android:textSize="16sp" />
 
-        <Button
-            android:id="@+id/btnAddTask"
-            android:layout_width="wrap_content"
+        <!-- Listado dinámico de tareas -->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/tareas">
+
+            <LinearLayout
+                android:id="@+id/container_tasks"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </ScrollView>
+
+        <!-- Input inferior para crear nueva tarea -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/agregar"
-            android:layout_marginStart="8dp" />
+            android:gravity="center_vertical"
+            android:paddingTop="8dp">
+
+            <EditText
+                android:id="@+id/etNuevaTarea"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/escribe_una_tarea"
+                android:textColor="@color/black"
+                android:inputType="text"
+                android:minHeight="48dp"
+                android:padding="10dp" />
+
+            <Button
+                android:id="@+id/btnAddTask"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/agregar"
+                android:layout_marginStart="8dp" />
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+
+    <!-- MENÚ DESPLEGABLE IZQUIERDO -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+         />
+
+</androidx.drawerlayout.widget.DrawerLayout>

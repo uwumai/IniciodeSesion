@@ -3,7 +3,6 @@ package com.example.iniciodesesion;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
@@ -19,6 +18,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.button.MaterialButton;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.FirebaseAuth;
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText emailField, passwordField;
 
-    // Nuevo launcher moderno
+    // Nuevo launcher moderno para Google Sign-In
     private ActivityResultLauncher<Intent> googleSignInLauncher;
 
     @Override
@@ -48,25 +48,28 @@ public class MainActivity extends AppCompatActivity {
         // Enlazar vistas
         emailField = findViewById(R.id.emailField);
         passwordField = findViewById(R.id.passwordField);
-        Button loginBtn = findViewById(R.id.loginBtn);
-        Button registerBtn = findViewById(R.id.registerBtn);
+        MaterialButton loginBtn = findViewById(R.id.loginBtn);
+        MaterialButton registerBtn = findViewById(R.id.registerBtn);
         ImageButton btnGoogle = findViewById(R.id.btnGoogle);
 
-        // Botón de Login con email y pass
+        // Acción: iniciar sesión con email y contraseña
         loginBtn.setOnClickListener(v -> loginUser());
 
-        // Botón de Registro con email y pass
-        registerBtn.setOnClickListener(v -> registerUser());
+        // Acción: registrar usuario con email y contraseña
+        registerBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
+            startActivity(intent);
+        });
 
-        // Configuración de Google Sign-In
+        // Configurar inicio de sesión con Google
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id)) // viene de google-services.json
+                .requestIdToken(getString(R.string.default_web_client_id)) // ⚠️ viene del google-services.json
                 .requestEmail()
                 .build();
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
-        // Inicializar launcher de Google Sign-In
+        // Inicializar launcher moderno de Google Sign-In
         googleSignInLauncher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
                 result -> {
@@ -92,15 +95,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        // Check if user is already signed in
+        // Si ya hay un usuario autenticado, saltar al menú directamente
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
-            // User is already logged in, go to menu
             navigateToMenu();
         }
     }
 
-    // ================= EMAIL/PASSWORD =======================
+    // =============================================================
+    // 🔹 REGISTRO CON EMAIL Y CONTRASEÑA
     private void registerUser() {
         String email = emailField.getText().toString().trim();
         String password = passwordField.getText().toString().trim();
@@ -126,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
+    // 🔹 INICIO DE SESIÓN CON EMAIL Y CONTRASEÑA
     private void loginUser() {
         String email = emailField.getText().toString().trim();
         String password = passwordField.getText().toString().trim();
@@ -151,9 +155,11 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
+    // =============================================================
+    // 🔹 INICIO DE SESIÓN CON GOOGLE
     private void signInWithGoogle() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
-        googleSignInLauncher.launch(signInIntent); // 👈 ahora con launcher
+        googleSignInLauncher.launch(signInIntent);
     }
 
     private void firebaseAuthWithGoogle(String idToken) {
@@ -174,9 +180,11 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
+    // =============================================================
+    // 🔹 IR AL MENÚ PRINCIPAL
     private void navigateToMenu() {
         Intent intent = new Intent(MainActivity.this, menu.class);
         startActivity(intent);
-        finish(); // Close login activity so user can't go back with back button
+        finish(); // evita que vuelva atrás al login
     }
 }

@@ -32,7 +32,6 @@
     <string name="añadirasignatura">➕ Añadir asignatura</string>
     <string name="nueva_asignatura">Nueva asignatura</string>
     <string name="resumen_general">📝 Tareas pendientes: %1$d\n📚 Apuntes guardados: %2$d</string>
-    <string name="toast_bienvenida">Bienvenido a tus apuntes</string>
     <string name="asignaturas">Asignaturas</string>
     <string name="matem_ticas">Matemáticas</string>
     <string name="Nombreasignatura">Nombre de la asignatura</string>
@@ -40,7 +39,6 @@
     <string name="new_subject">Nueva asignatura</string>
     <string name="subject_subtitle">Asignatura añadida</string>
     <string name="ejemplos">Apuntes, tareas, etc.</string>
-    <string name="nombre_de_la_materia">Nombre de la Materia</string>
     <string name="agregar">Agregar</string>
     <string name="escribe_una_tarea">Escribe una tarea...</string>
     <string name="nueva_tarea">Nueva tarea...</string>
@@ -50,7 +48,16 @@
     <string name="unnamed_subject">Sin nombre</string>
     <string name="task_item">- %1$s</string>
     <string name="seleccionar_horario">Seleccionar horario</string>
+    <string name="registrarme">Registrarme</string>
+    <string name="crear_cuenta">Crear cuenta</string>
+    <string name="confirmar_contrasena">Confirmar contraseña</string>
+    <string name="cerrar">Cerrar Sesion</string>
+    <string name="pendientes">Pendientes:</string>
+    <string name="guardar">Guardar</string>
+    <string name="nombre_de_usuario">Nombre de usuario</string>
+    <string name="noidea">Debe tener más de 3 letras</string>
     <string-array name="horarios_array">
+
         <item>Mañana</item>
         <item>Tarde</item>
         <item>Noche</item>

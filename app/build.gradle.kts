@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.example.iniciodesesion"
-    compileSdk = 35  // ⚠️ Usa el más estable, 36 aún no es oficial
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.example.iniciodesesion"
@@ -45,6 +45,7 @@ dependencies {
     // Firebase y Google Auth
     implementation(libs.play.services.auth)
     implementation(libs.firebase.auth)
+    implementation(libs.activity)
 
     // Tests
     testImplementation(libs.junit)
