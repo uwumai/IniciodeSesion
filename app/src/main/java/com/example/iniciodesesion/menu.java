@@ -127,4 +127,4 @@ public class menu extends AppCompatActivity {
         // 3️⃣ Mostrar el saludo final
         tvSaludoUsuario.setText("¡Hola, " + nombreUsuario + "!");
     }
-}
+} //uwu

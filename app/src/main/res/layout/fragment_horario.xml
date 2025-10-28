@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -19,6 +20,7 @@
 
     <!-- Botones Editar / Guardar -->
     <LinearLayout
+        style="?android:attr/buttonBarStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -27,6 +29,7 @@
 
         <Button
             android:id="@+id/btnEditar"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#FFD6A5"
@@ -37,6 +40,7 @@
 
         <Button
             android:id="@+id/btnGuardar"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#BDE0FE"
@@ -107,9 +111,9 @@
 
                 <!-- Filas de horario (7:00 a 22:00) -->
                 <!-- Ejemplo de fila, las demás se crean por código -->
-                <TableRow>
+                <TableRow android:importantForAutofill="no">
                     <TextView
-                        android:text="7:00"
+                        android:text="@string/_7_00"
                         android:textColor="@color/black"
                         android:padding="8dp" />
 
@@ -117,41 +121,50 @@
                         android:id="@+id/lunes_7"
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
+
                         android:gravity="center"
+                        android:importantForAutofill="no"
                         android:inputType="textCapWords"
-                        android:background="@drawable/bg_celda_pastel" />
+                        android:background="@drawable/bg_celda_pastel"
+                        tools:ignore="Autofill,LabelFor"
+                        android:contentDescription="@string/noidea"/>
 
                     <EditText
                         android:id="@+id/martes_7"
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/bg_celda_pastel"
                         android:gravity="center"
                         android:inputType="textCapWords"
-                        android:background="@drawable/bg_celda_pastel" />
+                        tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
                     <EditText
                         android:id="@+id/miercoles_7"
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/bg_celda_pastel"
                         android:gravity="center"
+                        android:importantForAutofill="no"
                         android:inputType="textCapWords"
-                        android:background="@drawable/bg_celda_pastel" />
+                        tools:ignore="LabelFor,TouchTargetSizeCheck" />
 
                     <EditText
                         android:id="@+id/jueves_7"
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/bg_celda_pastel"
                         android:gravity="center"
                         android:inputType="textCapWords"
-                        android:background="@drawable/bg_celda_pastel" />
+                        tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
                     <EditText
                         android:id="@+id/viernes_7"
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/bg_celda_pastel"
                         android:gravity="center"
-                        android:inputType="textCapWords"
-                        android:background="@drawable/bg_celda_pastel" />
+                        android:hint="@string/_7_00"
+                        android:inputType="textCapWords" />
                 </TableRow>
             </TableLayout>
         </ScrollView>

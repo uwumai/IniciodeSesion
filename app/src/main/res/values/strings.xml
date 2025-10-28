@@ -66,6 +66,7 @@
     <string name="miercoles">Miércoles</string>
     <string name="jueves">Jueves</string>
     <string name="viernes">Viernes</string>
+    <string name="_7_00">7:00</string>
     <string-array name="horarios_array">
 
 
