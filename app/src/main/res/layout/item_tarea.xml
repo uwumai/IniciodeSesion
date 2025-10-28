@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    card_view:cardCornerRadius="16dp"
+    card_view:cardElevation="6dp"
+    android:layout_gravity="center_horizontal"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true">
+
+    <LinearLayout
+        android:id="@+id/containerPendiente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Encabezado sin cuadradito de color -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingBottom="8dp">
+
+            <EditText
+                android:id="@+id/tvMateria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:hint="@string/materia"
+                android:importantForAutofill="no"
+                android:inputType="textCapWords"
+                android:singleLine="true"
+                android:textColor="#333333"
+                android:textColorHint="#333333"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:ignore="TouchTargetSizeCheck" />
+        </LinearLayout>
+
+        <!-- Contenido de la tarea -->
+        <EditText
+            android:id="@+id/tvTarea"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1FFFFFFF"
+            android:hint="@string/escribir_la_tarea"
+            android:importantForAutofill="no"
+            android:inputType="textMultiLine"
+            android:maxLines="5"
+            android:minHeight="48dp"
+            android:minLines="2"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="8dp"
+            android:textColor="#333333"
+            android:textColorHint="#666666"
+            android:textSize="15sp" />
+
+        <!-- Controles inferiores -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end"
+            android:paddingTop="8dp">
+
+            <CheckBox
+                android:id="@+id/checkTarea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/completado"
+                android:textColor="#555555" />
+
+            <ImageButton
+                android:id="@+id/btnBorrar"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="12dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="borrar_tarea"
+                android:src="@drawable/ic_delete"
+                app:tint="#555555"
+                tools:ignore="HardcodedText,TouchTargetSizeCheck" />
+        </LinearLayout>
+
+        <!-- Línea decorativa -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#DADADA" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

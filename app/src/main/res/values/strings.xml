@@ -35,10 +35,8 @@
     <string name="asignaturas">Asignaturas</string>
     <string name="matem_ticas">Matemáticas</string>
     <string name="Nombreasignatura">Nombre de la asignatura</string>
-    <string name="add_subject">Añadir asignatura</string>
     <string name="new_subject">Nueva asignatura</string>
     <string name="subject_subtitle">Asignatura añadida</string>
-    <string name="ejemplos">Apuntes, tareas, etc.</string>
     <string name="agregar">Agregar</string>
     <string name="escribe_una_tarea">Escribe una tarea...</string>
     <string name="nueva_tarea">Nueva tarea...</string>
@@ -56,7 +54,25 @@
     <string name="guardar">Guardar</string>
     <string name="nombre_de_usuario">Nombre de usuario</string>
     <string name="noidea">Debe tener más de 3 letras</string>
+    <string name="a_adir_pendientes">➕ Añadir pendientes</string>
+    <string name="escribir_la_tarea">Escribir la tarea...</string>
+    <string name="completado">completado</string>
+    <string name="horario_de_clases">📚 Horario de Clases</string>
+    <string name="hora">Hora</string>
+    <string name="guardaruwu">💾 Guardar</string>
+    <string name="editar">✏️ Editar</string>
+    <string name="lunes">Lunes</string>
+    <string name="martes">Martes</string>
+    <string name="miercoles">Miércoles</string>
+    <string name="jueves">Jueves</string>
+    <string name="viernes">Viernes</string>
     <string-array name="horarios_array">
+
+
+
+
+
+
 
         <item>Mañana</item>
         <item>Tarde</item>

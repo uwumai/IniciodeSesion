@@ -24,22 +24,28 @@ public class Notas extends AppCompatActivity {
         Button btnAddTask = findViewById(R.id.btnAddTask);
         containerTasks = findViewById(R.id.container_tasks);
 
-        // 👉 Recibir el nombre de la asignatura desde ApuntesFragment
+        // Recibir el nombre de la asignatura (opcional)
         String nombreAsignatura = getIntent().getStringExtra("nombreAsignatura");
         if (nombreAsignatura != null) {
             tvSubjectTitle.setText(nombreAsignatura);
         }
 
-        // Botón para añadir tareas/apuntes dinámicos
+        // Botón para añadir apuntes/tareas dinámicamente
         btnAddTask.setOnClickListener(v -> {
             String newTask = etApuntes.getText().toString().trim();
             if (!newTask.isEmpty()) {
+                // Crear TextView para mostrar la tarea
                 TextView task = new TextView(this);
-                // 👇 usar el string con placeholder
-                task.setText(getString(R.string.task_item, newTask));
-                task.setPadding(8, 8, 8, 8);
+                task.setText(newTask);
+                task.setPadding(16, 16, 16, 16);
+                task.setTextSize(16f);
+
+                // Agregar al contenedor
                 containerTasks.addView(task);
+
+                // Limpiar EditText
                 etApuntes.setText("");
             }
         });
-    }}
+    }
+}
