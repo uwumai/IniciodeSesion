@@ -1,28 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
-    <color name="naranja">#EDDF88</color>
-    <color name="naranja2">#FF9A0E</color>
-    <color name="naranja3">#FBC163</color>
-    <color name="darkgray">#444444</color>
-    <color name="grisclaro">#F4F4F4</color>
-    <color name="grisclaro2">#DCDCDC</color>
-
-    <color name="primary_blue">#4A90A4</color>
-    <color name="light_blue">#E8F4FD</color>
-    <color name="dark_text">#2C3E50</color>
-    <color name="gray_text">#7F8C8D</color>
-    <color name="light_gray">#95A5A6</color>
-    <color name="background">#F8F9FA</color>
-    <color name="white">#FFFFFF</color>
-    <color name="random">#C4D7C2</color>
-    <color name="pastel_yellow_light">#FFF8DC</color>
-    <color name="pastel_brown">#876E61</color>
-    <color name="pastel_peach">#FFDAB9</color>
-    <color name="pastel_blue_light">#D6F0FF</color>
-    <color name="pastel_rosado">#FFE6E6</color>
-    <color name="pastel_azul">#AEE6FF</color>
-    <color name="pastel_verde">#C8F7C5</color>
-    <color name="pastel_amarillo">#FFF7AE</color>
-
+    <color name="white">#FFFFFFFF</color>
+    <color name="grisclaro2">#E0E0E0</color>
 </resources>

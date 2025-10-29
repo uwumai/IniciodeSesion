@@ -1,47 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/apuntes_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="@color/white">
+    android:background="@android:color/white">
 
     <TextView
-        android:id="@+id/tvTareas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/pendientes"
+        android:text="Tareas Pendientes"
         android:textSize="22sp"
         android:textStyle="bold"
         android:textColor="@android:color/black"
         android:layout_marginBottom="16dp"/>
 
     <Button
-        android:id="@+id/btn_add_subject"
+        android:id="@+id/btnAddTarea"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="@color/grisclaro2"
-        android:padding="20dp"
-        android:text="@string/a_adir_pendientes"
-        android:textColor="@color/black"
-        android:textStyle="bold" />
+        android:text="Agregar Tarea"
+        android:backgroundTint="#4CAF50"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="16dp"/>
 
-    <!-- 📌 Scroll para poder subir/bajar asignaturas -->
-    <ScrollView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewTareas"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:overScrollMode="always"
-        android:contentDescription="@string/apuntes">
-
-        <LinearLayout
-            android:id="@+id/container_subjects"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:dividerPadding="8dp"/>
-    </ScrollView>
+        android:layout_weight="1"/>
 
 </LinearLayout>

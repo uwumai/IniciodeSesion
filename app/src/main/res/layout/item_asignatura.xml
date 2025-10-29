@@ -1,75 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="16dp">
+    android:orientation="horizontal"
+    android:padding="8dp"
+    android:layout_marginBottom="8dp"
+    android:background="?attr/selectableItemBackground">
 
-    <!-- Rectángulo de fondo -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/bgCard"
-        android:layout_width="match_parent"
-        android:layout_height="130dp"
-        android:layout_gravity="center_vertical"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="0dp"
-        app:cardBackgroundColor="@color/grisclaro">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <!-- Texto "Pendientes:" -->
-
-            <!-- Botón: Guardar -->
-
-            <EditText
-                android:id="@+id/etSubject"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginEnd="16dp"
-                android:background="@android:color/transparent"
-                android:gravity="end|center_vertical"
-                android:hint="@string/Nombreasignatura"
-                android:importantForAutofill="no"
-                android:inputType="textCapWords"
-                android:minHeight="48dp"
-                android:textColor="@color/black"
-                android:textColorHint="#9B9B9B"
-                android:textDirection="ltr"
-                android:textSize="16sp"
-                tools:ignore="HardcodedText,VisualLintTextFieldSize" />
-
-            <Button
-                android:id="@+id/btnGuardar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/etSubject"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="48dp"
-                android:backgroundTint="#90A4AE"
-                android:fontFamily="sans-serif"
-                android:paddingVertical="6dp"
-                android:text="@string/guardar"
-                android:textColor="@color/black" />
-
-        </RelativeLayout>
-    </androidx.cardview.widget.CardView>
-
-    <!-- Cuadro destacado a la izquierda (encima del rectángulo) -->
     <androidx.cardview.widget.CardView
         android:id="@+id/colorBox"
-        android:layout_width="150dp"
-        android:layout_height="160dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="4dp"
-        android:layout_gravity="start|center_vertical"
-        app:cardCornerRadius="24dp"
-        app:cardElevation="0dp" />
-</FrameLayout>
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="12dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="2dp"/>
+
+    <EditText
+        android:id="@+id/etSubject"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center_vertical"
+        android:hint="Nombre de la asignatura"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:background="@android:color/transparent"
+        android:padding="8dp"/>
+
+    <Button
+        android:id="@+id/btnGuardar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guardar"
+        android:textSize="12sp"
+        android:backgroundTint="#4CAF50"
+        android:textColor="@android:color/white"/>
+
+</LinearLayout>

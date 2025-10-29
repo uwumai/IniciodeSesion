@@ -1,172 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:background="@color/white">
+    android:background="@android:color/white"
+    android:padding="8dp">
 
-    <TextView
-        android:id="@+id/tvTituloHorario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/horario_de_clases"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="12dp" />
-
-    <!-- Botones Editar / Guardar -->
     <LinearLayout
-        style="?android:attr/buttonBarStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginBottom="12dp">
+        android:orientation="vertical">
 
-        <Button
-            android:id="@+id/btnEditar"
-            style="?android:attr/buttonBarButtonStyle"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#FFD6A5"
-            android:text="@string/editar"
+            android:text="Horario Semanal"
+            android:textSize="22sp"
             android:textStyle="bold"
-            android:textColor="@color/black"
-            android:layout_marginEnd="8dp" />
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="16dp"
+            android:padding="8dp"/>
 
-        <Button
-            android:id="@+id/btnGuardar"
-            style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#BDE0FE"
-            android:text="@string/guardar"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:visibility="gone" />
-    </LinearLayout>
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <!-- Tabla del horario -->
-    <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:fillViewport="true">
-
-        <ScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:fillViewport="true">
-
-            <TableLayout
-                android:id="@+id/tablaHorario"
+            <GridLayout
+                android:id="@+id/gridHorario"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:stretchColumns="*"
-                android:background="#FFF5F5F5"
-                android:padding="4dp">
+                android:columnCount="6"
+                android:rowCount="18"/>
 
-                <!-- Encabezado -->
-                <TableRow>
-                    <TextView
-                        android:text="@string/hora"
-                        android:textStyle="bold"
-                        android:padding="8dp"
-                        android:textColor="@color/black" />
+        </HorizontalScrollView>
 
-                    <TextView
-                        android:text="@string/lunes"
-                        android:textStyle="bold"
-                        android:padding="8dp"
-                        android:textColor="@color/black" />
+    </LinearLayout>
 
-                    <TextView
-                        android:text="@string/martes"
-                        android:textStyle="bold"
-                        android:padding="8dp"
-                        android:textColor="@color/black" />
-
-                    <TextView
-                        android:text="@string/miercoles"
-                        android:textStyle="bold"
-                        android:padding="8dp"
-                        android:textColor="@color/black" />
-
-                    <TextView
-                        android:text="@string/jueves"
-                        android:textStyle="bold"
-                        android:padding="8dp"
-                        android:textColor="@color/black" />
-
-                    <TextView
-                        android:text="@string/viernes"
-                        android:textStyle="bold"
-                        android:padding="8dp"
-                        android:textColor="@color/black" />
-                </TableRow>
-
-                <!-- Filas de horario (7:00 a 22:00) -->
-                <!-- Ejemplo de fila, las demás se crean por código -->
-                <TableRow android:importantForAutofill="no">
-                    <TextView
-                        android:text="@string/_7_00"
-                        android:textColor="@color/black"
-                        android:padding="8dp" />
-
-                    <EditText
-                        android:id="@+id/lunes_7"
-                        android:layout_width="80dp"
-                        android:layout_height="wrap_content"
-
-                        android:gravity="center"
-                        android:importantForAutofill="no"
-                        android:inputType="textCapWords"
-                        android:background="@drawable/bg_celda_pastel"
-                        tools:ignore="Autofill,LabelFor"
-                        android:contentDescription="@string/noidea"/>
-
-                    <EditText
-                        android:id="@+id/martes_7"
-                        android:layout_width="80dp"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bg_celda_pastel"
-                        android:gravity="center"
-                        android:inputType="textCapWords"
-                        tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-                    <EditText
-                        android:id="@+id/miercoles_7"
-                        android:layout_width="80dp"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bg_celda_pastel"
-                        android:gravity="center"
-                        android:importantForAutofill="no"
-                        android:inputType="textCapWords"
-                        tools:ignore="LabelFor,TouchTargetSizeCheck" />
-
-                    <EditText
-                        android:id="@+id/jueves_7"
-                        android:layout_width="80dp"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bg_celda_pastel"
-                        android:gravity="center"
-                        android:inputType="textCapWords"
-                        tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-                    <EditText
-                        android:id="@+id/viernes_7"
-                        android:layout_width="80dp"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/bg_celda_pastel"
-                        android:gravity="center"
-                        android:hint="@string/_7_00"
-                        android:inputType="textCapWords" />
-                </TableRow>
-            </TableLayout>
-        </ScrollView>
-    </HorizontalScrollView>
-</LinearLayout>
+</ScrollView>
